@@ -28,7 +28,7 @@ class BadgetView(LoginRequiredMixin, ListView):
 class CreateCV(CreateView):
     model = carga_cv
     fields =['nombre', 'apellido', 'tipo_identificacion', 'cedula', 'fecha_nacimiento', 'genero', 'estado_civil', 'telefono',
-    'Departamento', 'direccion', 'Centro_educativo','Nivel_educativo','Estado_estudio', 'cargo','Empresa','Periodo_inicio',
+    'municipio', 'direccion', 'Centro_educativo','Nivel_educativo','Estado_estudio', 'cargo','Empresa','Periodo_inicio',
     'Periodo_fin','Funciones', 'idioma', 'nivel','area', 'salario','foto', 'archivo_cv']
 
     def get_success_url(self):
@@ -37,7 +37,7 @@ class CreateCV(CreateView):
 class BadgetUpdate(UpdateView):
     model = carga_cv
     fields =['nombre', 'apellido', 'tipo_identificacion', 'cedula', 'fecha_nacimiento', 'genero', 'estado_civil', 'telefono',
-    'Departamento', 'direccion', 'Centro_educativo','Nivel_educativo','Estado_estudio', 'cargo','Empresa','Periodo_inicio',
+    'municipio', 'direccion', 'Centro_educativo','Nivel_educativo','Estado_estudio', 'cargo','Empresa','Periodo_inicio',
     'Periodo_fin','Funciones', 'idioma', 'nivel','area', 'salario','foto', 'archivo_cv']
 
     def get_success_url(self):
