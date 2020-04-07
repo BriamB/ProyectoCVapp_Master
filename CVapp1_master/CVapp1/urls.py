@@ -12,9 +12,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('users/', include(('users.urls','users'), namespace='users')),
     path('carguecv/',views.BadgetView.as_view(), name='carguecv'),
-    path('cargueexplav/',views.BadgetViewExp.as_view(), name='cargueexplav'),
     path('<int:pk>', views.BadgetUpdate.as_view(), name='editar'),
-    path('<int:pk>',views.BadgetDetail.as_view(), name='Detail'),
+    path('detail/<int:pk>',views.BadgetDetail.as_view(), name='detail'),
     path('crear/', views.CreateCV.as_view(), name="crear"),
     path('users/', include(('users.urls', 'users'), namespace='users')),
 

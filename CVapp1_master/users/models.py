@@ -12,4 +12,6 @@ class Rol(models.Model):
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     rol = models.ForeignKey(Rol, on_delete=models.PROTECT)
-    
+
+    class Meta:
+        permissions =(("listar","listar"),)

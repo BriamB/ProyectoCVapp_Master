@@ -10,11 +10,13 @@
     <thead class="thead-dark" align="left">
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Empresa</th>
-        <th scope="col">Ciudad</th>
-        <th scope="col">Inicio laboral</th>
-        <th scope="col">Fin laboral</th>
-        <th scope="col">Funciones</th>
+        <th scope="col">Company</th>
+        <th scope="col">City</th>
+        <th scope="col">Work Start</th>
+        <th scope="col">Labor End</th>
+        <th scope="col">Labors</th>
+        <th scope="col">edit</th>
+        <th scope="col">visibility</th>
       </tr>
     </thead>
     <tbody>
@@ -26,9 +28,23 @@
         <td>{{ Exp_Profesional.Periodo_inicio }}</td>
         <td>{{ Exp_Profesional.Periodo_fin}}</td>
         <td>{{ Exp_Profesional.Funciones }}</td>
-
+        <td>
+            <a href="{% url 'editar' Exp_Profesional.id %}">
+                <i class="material-icons">mode_edit</i>
+            </a>
+        </td>
+        <td>
+            <a href="{% url 'Detail' Exp_Profesional.id %}">
+                <i class="material-icons">visibility</i>
+            </a>
+        </td>
       </tr>
       {% endfor %}
+      <div class="fixed-action-btn">
+          <a href="{% url 'crear' %}" class="btn-floating btn-large red">
+              <i class="large material-icons">+</i>
+          </a>
+      </div>
     </tbody>
   </table>
 

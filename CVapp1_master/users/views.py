@@ -17,6 +17,8 @@ from .tokens import account_activation_token
 from django.utils.html import strip_tags
 from django.core.mail import EmailMultiAlternatives
 
+
+
 #Users Register
 def signup(request):
     if request.method == 'POST':
@@ -36,7 +38,7 @@ def signup(request):
 #Enviar correo electrónico para activar usuario
 def SendEmailActivateUser(request, user):
     current_site = get_current_site(request)
-    subject = 'Activar cuenta CINEMA'
+    subject = 'Activar cuenta CVapp'
     html_content = render_to_string('email/account_activation.html', {
         'user': user,
         'domain': current_site.domain,
