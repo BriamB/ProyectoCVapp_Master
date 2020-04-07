@@ -1,18 +1,17 @@
 from django.db import models
 
 # Create your models here.
+class Departamento(models.Model):
+    departamento = models.CharField(max_length=200)
+    def __str__(self):
+        return self.departamento
+        
 class Municipio(models.Model):
     municipio= models.CharField(max_length=200)
+    departamento = models.ForeignKey(Departamento, null=False, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.municipio
-
-class Departamento(models.Model):
-    departamento = models.CharField(max_length=200)
-    municipio = models.ForeignKey(Municipio, null=False, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.departamento
 
 class Area(models.Model):
     Areas = models.CharField(max_length=50)
@@ -40,7 +39,7 @@ class carga_cv(models.Model):
     genero = models.CharField(max_length=15)
     estado_civil = models.CharField(max_length=15)
     telefono = models.CharField(max_length=15)
-    Departamento = models.ForeignKey(Departamento, null=False, on_delete=models.CASCADE)
+    municipio = models.ForeignKey(Municipio, null=False, on_delete=models.CASCADE)
     direccion = models.CharField(max_length=50)
     Centro_educativo = models.CharField(max_length=200)
     Nivel_educativo = models.CharField(max_length=200)
