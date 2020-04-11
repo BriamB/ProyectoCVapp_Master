@@ -1,11 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Departamento(models.Model):
     departamento = models.CharField(max_length=200)
     def __str__(self):
         return self.departamento
-        
+
 class Municipio(models.Model):
     municipio= models.CharField(max_length=200)
     departamento = models.ForeignKey(Departamento, null=False, on_delete=models.CASCADE)

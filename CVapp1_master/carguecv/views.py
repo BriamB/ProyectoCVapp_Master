@@ -24,6 +24,8 @@ def home(request):
 class BadgetView(LoginRequiredMixin, ListView):
     template_name = 'carguecv.html'
     model = carga_cv
+    paginate_by = 10
+    ordering =['cedula']
 
 class CreateCV(CreateView):
     model = carga_cv
@@ -45,4 +47,6 @@ class BadgetUpdate(UpdateView):
 
 class BadgetDetail(DetailView):
     model = carga_cv
-    template_name = 'carguecv/detail.html'
+
+    def get_success_url(self):
+        return reverse('')

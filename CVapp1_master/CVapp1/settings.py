@@ -122,6 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#Sentencia para guardar archivos
 MEDIA_ROOT = os.path.join(BASE_DIR, "templates/media")
 MEDIA_URL = '/media/'
 
